@@ -12,9 +12,14 @@ export default async function GetName() {
 
   const info: Word = await res.json();
 
+  const word = info.word.toLowerCase();
+
+  if (word.length > 6) {
+    return GetName();
+  }
   const chars = info.word.length;
 
-  const response: [string, number] = [info.word, chars];
+  const response: [string, number] = [word, chars];
 
   return response;
 }
