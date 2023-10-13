@@ -24,7 +24,7 @@ export default function Restart({
     <>
       <button
         className={`flex justify-center m-auto -mt-24 lg:-mt-52 border-2 
-        px-3 py-1 rounded-md text-lg text-white font-semibold
+        px-5 py-2 rounded-md text-lg text-white font-semibold
         hover:scale-105 hover:text-xl transition-all ${btnColor}`}
         onClick={() => generateWord()}
       >
