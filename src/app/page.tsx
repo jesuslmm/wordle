@@ -10,7 +10,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import CardSkeleton from "./components/skeleton/cardSkeleton";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import JSConfetti from "js-confetti";
+import ReactConfetti from "react-confetti";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,10 +21,8 @@ export default function Home() {
 
   const [isLost, setIsLost] = useState(false);
 
-  const jsConfetti = new JSConfetti();
-
   const winNotify = () =>
-    toast.success("🏆 You won!", {
+    toast("🏆 You won!", {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -73,16 +71,8 @@ export default function Home() {
     if (!isWinned && !isLost) {
       GenerateWord();
     } else if (isWinned) {
-      jsConfetti.addConfetti({
-        emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
-        emojiSize: 35,
-      }),
-        winNotify();
+      winNotify();
     } else if (isLost) {
-      jsConfetti.addConfetti({
-        emojis: ["❌", "😢", "😡"],
-        emojiSize: 30,
-      });
       wordNotify();
     }
   }, [isWinned, isLost]);
@@ -94,6 +84,7 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden w-full">
       <SkeletonTheme highlightColor="#ABCDEA">
+        {isWinned && <ReactConfetti />}
         <Title />
         {isLoaded ? (
           <BlankDisplayer
