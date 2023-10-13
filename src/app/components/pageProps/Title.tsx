@@ -7,7 +7,7 @@ export default function Title() {
       </h1>
       <p className="text-center pt-8 pb-1 text-xl ">Wait one day? nah</p>
       <p className="text-center  text-lg text-blue-400">
-        Just play as many times you want!
+        Words with more/less than 5 characters!
       </p>
     </>
   );
