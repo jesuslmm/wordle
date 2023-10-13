@@ -1,7 +1,7 @@
 export default function Title() {
   return (
     <>
-      <h1 className="pt-16 text-5xl font-semibold text-center text-blue-500">
+      <h1 className="pt-16 text-4xl font-semibold text-center text-blue-500">
         <span className="font-extrabold text-blue-600">W</span>ordle
         <span className="font-extrabold text-blue-600">M</span>ania
       </h1>

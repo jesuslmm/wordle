@@ -22,7 +22,7 @@ export default function Blanks({
 
         return (
           <section
-            className={`flex h-20 w-20 items-center justify-center border  rounded-sm border-gray-400 
+            className={`flex h-16 w-16 items-center justify-center border  rounded-sm border-gray-400 
             font-bold uppercase  ${bgColor}`}
             key={i}
           >
